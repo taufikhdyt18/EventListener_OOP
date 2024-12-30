@@ -30,56 +30,71 @@
 
 ### A. Package Classes:
 
-BaseModel.java
+#### BaseModel.java
 
+![image](ss/ss3.png)
 
-Merupakan abstract class yang menjadi dasar untuk semua model
+- Merupakan abstract class yang menjadi dasar untuk semua model
 Mengimplementasikan operasi CRUD dasar (Create, Read, Update, Delete)
 Menggunakan generic type <T> untuk fleksibilitas tipe data
 Method abstract yang harus diimplementasikan:
 
-findAll(): Mengambil semua data
-findById(): Mencari data berdasarkan ID
-insert(): Menambah data baru
-update(): Mengubah data
-delete(): Menghapus data
+1. findAll(): Mengambil semua data
+
+2. findById(): Mencari data berdasarkan ID
+
+3. insert(): Menambah data baru
+
+4. update(): Mengubah data
+
+5. delete(): Menghapus data
 
 
 
+#### Database.java
 
-Database.java
+![image](ss/ss4.png)
 
-
-Mengatur koneksi ke database MySQL
+- Mengatur koneksi ke database MySQL
 Menggunakan pattern Singleton untuk koneksi database
 Menyimpan konfigurasi database seperti:
 
-DRIVER: MySQL JDBC driver
-URL: Alamat database
-USERNAME: Username MySQL
-PASSWORD: Password MySQL
+1. DRIVER: MySQL JDBC driver
+
+2. URL: Alamat database
+
+3. USERNAME: Username MySQL
+
+4. PASSWORD: Password MySQL
 
 
+#### RowMapper.java
 
+![image](ss/ss5.png)
 
-RowMapper.java
+- Interface untuk mapping data dari ResultSet ke objek
 
+1. Memudahkan konversi data dari database ke objek Java
 
-Interface untuk mapping data dari ResultSet ke objek
-Memudahkan konversi data dari database ke objek Java
-Menggunakan generic type untuk fleksibilitas
+2. Menggunakan generic type untuk fleksibilitas
 
-B. Package Controller:
-MahasiswaController.java
+### B. Package Controller:
 
-Menghubungkan Model dan View
+#### MahasiswaController.java
+
+![image](ss/ss6.png)
+
+- Menghubungkan Model dan View
 Menghandle event dari View
 Implementasi logika bisnis seperti:
 
-saveMahasiswa(): Menyimpan/update data mahasiswa
-deleteMahasiswa(): Menghapus data mahasiswa
-clearForm(): Membersihkan form
-refreshTable(): Memperbarui tampilan tabel
+1. saveMahasiswa(): Menyimpan/update data mahasiswa
+
+2. deleteMahasiswa(): Menghapus data mahasiswa
+
+3. clearForm(): Membersihkan form
+
+4. refreshTable(): Memperbarui tampilan tabel
 
 
 
