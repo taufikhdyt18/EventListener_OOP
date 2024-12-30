@@ -15,11 +15,15 @@
 
 ![image](ss/ss2.png)
 
-classes: Berisi kelas-kelas dasar dan utilitas
-controller: Berisi logic untuk mengontrol alur data
-model: Berisi struktur data dan operasi database
-view: Berisi tampilan GUI
-Main.java: File utama untuk menjalankan aplikasi
+- classes: Berisi kelas-kelas dasar dan utilitas
+
+- controller: Berisi logic untuk mengontrol alur data
+
+- model: Berisi struktur data dan operasi database
+
+- view: Berisi tampilan GUI
+
+- Main.java: File utama untuk menjalankan aplikasi
 
 
 PENJELASAN SETIAP PACKAGE DAN FILE
