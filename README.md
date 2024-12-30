@@ -261,5 +261,6 @@ CREATE TABLE mahasiswa (
 
 ### Output
 
-![image](ss/ss12.png)
+![image](ss/ss13.png)
 
+## Selesai
