@@ -11,7 +11,8 @@
 
 ## STRUKTUR PROYEK
 
-Proyek ini menggunakan arsitektur MVC (Model-View-Controller) dengan struktur folder:
+- Proyek ini menggunakan arsitektur MVC (Model-View-Controller) dengan struktur folder:
+
 ![image](ss/ss2.png)
 
 classes: Berisi kelas-kelas dasar dan utilitas
