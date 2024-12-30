@@ -8,9 +8,11 @@
 
 ## Latihan OOP
 ![image](ss/ss1.png)
-STRUKTUR PROYEK
-Proyek ini menggunakan arsitektur MVC (Model-View-Controller) dengan struktur folder:
 
+## STRUKTUR PROYEK
+
+Proyek ini menggunakan arsitektur MVC (Model-View-Controller) dengan struktur folder:
+![image](ss/ss2.png)
 
 classes: Berisi kelas-kelas dasar dan utilitas
 controller: Berisi logic untuk mengontrol alur data
