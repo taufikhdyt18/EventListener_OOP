@@ -259,5 +259,7 @@ CREATE TABLE mahasiswa (
 
 1. Klik Clear untuk membersihkan form
 
+### Output
 
+![image](ss/ss12.png)
 
