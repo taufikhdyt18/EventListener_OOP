@@ -6,7 +6,8 @@
 | Kelas | TI.23.A6
 
 
-
+## Latihan OOP
+![image](ss/ss1.png)
 STRUKTUR PROYEK
 Proyek ini menggunakan arsitektur MVC (Model-View-Controller) dengan struktur folder:
 
