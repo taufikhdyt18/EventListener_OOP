@@ -9,7 +9,7 @@
 ## Latihan OOP
 ![image](ss/ss1.png)
 
-## STRUKTUR PROYEK
+### STRUKTUR PROYEK
 
 - Proyek ini menggunakan arsitektur MVC (Model-View-Controller) dengan struktur folder:
 
@@ -26,9 +26,9 @@
 - Main.java: File utama untuk menjalankan aplikasi
 
 
-PENJELASAN SETIAP PACKAGE DAN FILE
+## PENJELASAN SETIAP PACKAGE DAN FILE
 
-A. Package Classes:
+### A. Package Classes:
 
 BaseModel.java
 
