@@ -82,7 +82,7 @@ Menyimpan konfigurasi database seperti:
 
 #### MahasiswaController.java
 
-![image](ss/ss6.png)
+![image](ss/ss7.png)
 
 - Menghubungkan Model dan View
 Menghandle event dari View
@@ -98,79 +98,108 @@ Implementasi logika bisnis seperti:
 
 
 
-C. Package Model:
+### C. Package Model:
 
-Mahasiswa.java
+#### Mahasiswa.java
 
+![image](ss/ss8.png)
 
-POJO (Plain Old Java Object) untuk data mahasiswa
+- POJO (Plain Old Java Object) untuk data mahasiswa
 Memiliki properti:
 
-id: ID mahasiswa
-nim: Nomor Induk Mahasiswa
-nama: Nama mahasiswa
-jurusan: Jurusan mahasiswa
-alamat: Alamat mahasiswa
+1. id: ID mahasiswa
+
+2. nim: Nomor Induk Mahasiswa
+
+3. nama: Nama mahasiswa
+
+4. jurusan: Jurusan mahasiswa
+
+5. alamat: Alamat mahasiswa
 
 
 Dilengkapi dengan getter dan setter
 
 
-MahasiswaModel.java
+#### MahasiswaModel.java
 
+![image](ss/ss9.png)
 
-Extends BaseModel<Mahasiswa>
+- Extends BaseModel<Mahasiswa>
 Implementasi operasi database untuk entity Mahasiswa
 Menggunakan PreparedStatement untuk keamanan dari SQL Injection
 Implementasi method CRUD:
 
-findAll(): SELECT semua mahasiswa
-findById(): SELECT mahasiswa berdasar ID
-insert(): INSERT mahasiswa baru
-update(): UPDATE data mahasiswa
-delete(): DELETE mahasiswa
+1. findAll(): SELECT semua mahasiswa
+
+2. findById(): SELECT mahasiswa berdasar ID
+
+3. insert(): INSERT mahasiswa baru
+
+4. update(): UPDATE data mahasiswa
+
+5. delete(): DELETE mahasiswa
 
 
 
-D. Package View:
-FormMahasiswa.java
+### D. Package View:
 
-Implementasi GUI menggunakan Java Swing
+#### FormMahasiswa.java
+
+![image](ss/ss10.png)
+
+- Implementasi GUI menggunakan Java Swing
 Komponen utama:
 
-JTextField untuk input data
-JButton untuk aksi (Save, Delete, Clear)
-JTable untuk menampilkan data
+1. JTextField untuk input data
+
+2. JButton untuk aksi (Save, Delete, Clear)
+
+3. JTable untuk menampilkan data
 
 
-Fitur:
+- Fitur:
 
-Form input data mahasiswa
-Tabel daftar mahasiswa
-Tombol aksi
+1. Form input data mahasiswa
+
+2. Tabel daftar mahasiswa
+
+3. Tombol aksi
 
 
 Event handling untuk interaksi user
 
-E. Main.java
+### E. Main.java
 
-Entry point aplikasi
+![image](ss/ss11.png)
+
+- Entry point aplikasi
 Inisialisasi semua komponen:
 
-Membuat koneksi database
-Membuat instance Model
-Membuat instance View
-Membuat instance Controller
-Menampilkan GUI
+1. Membuat koneksi database
+
+2. Membuat instance Model
+
+3. Membuat instance View
+
+4. Membuat instance Controller
+
+5. Menampilkan GUI
 
 
 
 
-KONFIGURASI DATABASE
+### KONFIGURASI DATABASE DI MYSQL
 
-sqlCopyCREATE DATABASE akademik_db;
+- #mysql -h127.0.0.1 -uroot
+
+```
+CREATE DATABASE akademik_db;
+```
+```
 USE akademik_db;
-
+```
+```
 CREATE TABLE mahasiswa (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nim VARCHAR(20) NOT NULL UNIQUE,
@@ -178,81 +207,57 @@ CREATE TABLE mahasiswa (
     jurusan VARCHAR(50) NOT NULL,
     alamat TEXT
 );
+```
 
-CARA PENGGUNAAN APLIKASI
+### CARA PENGGUNAAN APLIKASI
 
-A. Persiapan:
+#### A. Persiapan:
 
-Install MySQL
-Buat database menggunakan script SQL di atas
-Install MySQL JDBC Driver
-Sesuaikan konfigurasi database di Database.java
+- Install MySQL
 
-B. Menjalankan Aplikasi:
+- Buat database menggunakan script SQL di atas
 
-Compile semua file Java
-Jalankan Main.java
-GUI aplikasi akan muncul
+- Install MySQL JDBC Driver
 
-C. Fitur-fitur:
+- Sesuaikan konfigurasi database di Database.java
 
-Tambah Mahasiswa:
+#### B. Menjalankan Aplikasi:
 
-Isi form dengan data mahasiswa
-Klik tombol Save
+- Compile semua file Java
 
+- Jalankan Main.java
 
-Edit Mahasiswa:
+- GUI aplikasi akan muncul
 
-Pilih data di tabel
-Data akan muncul di form
-Ubah data
-Klik Save
+#### C. Fitur-fitur:
 
+- Tambah Mahasiswa:
 
-Hapus Mahasiswa:
+1. Isi form dengan data mahasiswa
 
-Pilih data di tabel
-Klik Delete
+2. Klik tombol Save
 
 
-Clear Form:
+- Edit Mahasiswa:
 
-Klik Clear untuk membersihkan form
+1. Pilih data di tabel
 
+2. Data akan muncul di form
 
-KEAMANAN
+3. Ubah data
 
+4. Klik Save
 
-Menggunakan PreparedStatement untuk mencegah SQL Injection
-Validasi input di controller
-Error handling untuk operasi database
+- Hapus Mahasiswa:
 
+1. Pilih data di tabel
 
-BEST PRACTICES
-
-
-Menggunakan MVC pattern
-Single Responsibility Principle
-Dependency Injection
-Generic types untuk fleksibilitas
-Proper error handling
-Clean code principles
+2. Klik Delete
 
 
-KEBUTUHAN SISTEM
+- Clear Form:
+
+1. Klik Clear untuk membersihkan form
 
 
-Java Development Kit (JDK)
-MySQL Server
-MySQL JDBC Driver
-IDE Java (opsional)
 
-Aplikasi ini bisa dikembangkan lebih lanjut dengan menambahkan fitur seperti:
-
-Login system
-Manajemen user
-Reporting
-Backup/restore data
-Validasi input yang lebih kompleks
-UI yang lebih menarik
