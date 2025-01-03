@@ -11,7 +11,7 @@
 
 ### STRUKTUR PROYEK
 
-- Proyek ini menggunakan arsitektur MVC (Model-View-Controller) dengan struktur folder:
+**- Proyek ini menggunakan arsitektur MVC (Model-View-Controller) dengan struktur folder:**
 
 ![image](img/ss0.png)
 
@@ -102,20 +102,20 @@ Implementasi logika bisnis seperti:
 
 #### Mahasiswa.java
 
-![image](ss/ss8.png)
+![image](img/ss8.png)
 
 - POJO (Plain Old Java Object) untuk data mahasiswa
 Memiliki properti:
 
-1. id: ID mahasiswa
+**1. id: ID mahasiswa**
 
-2. nim: Nomor Induk Mahasiswa
+**2. nim:** Nomor Induk Mahasiswa
 
-3. nama: Nama mahasiswa
+**3. nama:** Nama mahasiswa
 
-4. jurusan: Jurusan mahasiswa
+**4. jurusan:** Jurusan mahasiswa
 
-5. alamat: Alamat mahasiswa
+**5. angkatan:** Angkatan Tahun mahasiswa
 
 
 Dilengkapi dengan getter dan setter
@@ -123,7 +123,7 @@ Dilengkapi dengan getter dan setter
 
 #### MahasiswaModel.java
 
-![image](ss/ss9.png)
+![image](img/ss9.png)
 
 - Extends BaseModel<Mahasiswa>
 Implementasi operasi database untuk entity Mahasiswa
@@ -146,7 +146,7 @@ Implementasi method CRUD:
 
 #### FormMahasiswa.java
 
-![image](ss/ss10.png)
+![image](img/ss10.png)
 
 - Implementasi GUI menggunakan Java Swing
 Komponen utama:
@@ -171,7 +171,7 @@ Event handling untuk interaksi user
 
 ### E. Main.java
 
-![image](ss/ss11.png)
+![image](img/ss11.png)
 
 - Entry point aplikasi
 Inisialisasi semua komponen:
@@ -191,13 +191,13 @@ Inisialisasi semua komponen:
 
 ### KONFIGURASI DATABASE DI MYSQL
 
-- #mysql -h127.0.0.1 -uroot
+**- #mysql -h127.0.0.1 -uroot**
 
 ```
-CREATE DATABASE akademik_db;
+CREATE DATABASE akademik;
 ```
 ```
-USE akademik_db;
+USE akademik;
 ```
 ```
 CREATE TABLE mahasiswa (
@@ -205,62 +205,34 @@ CREATE TABLE mahasiswa (
     nim VARCHAR(20) NOT NULL UNIQUE,
     nama VARCHAR(100) NOT NULL,
     jurusan VARCHAR(50) NOT NULL,
-    alamat TEXT
+    angkatan VARCHAR(100) NOT NULL
+);
+```
+```
+CREATE TABLE nilai (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    mahasiswa_id INT NOT NULL,
+    mata_kuliah VARCHAR(100) NOT NULL,
+    semester INT NOT NULL,
+    nilai_tugas FLOAT,
+    nilai_uts FLOAT,
+    nilai_uas FLOAT,
+    nilai_akhir FLOAT,
+    grade CHAR(2),
+    FOREIGN KEY (mahasiswa_id) REFERENCES mahasiswa(id)
+    ON DELETE CASCADE
 );
 ```
 
-### CARA PENGGUNAAN APLIKASI
-
-#### A. Persiapan:
-
-- Install MySQL
-
-- Buat database menggunakan script SQL di atas
-
-- Install MySQL JDBC Driver
-
-- Sesuaikan konfigurasi database di Database.java
-
-#### B. Menjalankan Aplikasi:
-
-- Compile semua file Java
-
-- Jalankan Main.java
-
-- GUI aplikasi akan muncul
-
-#### C. Fitur-fitur:
-
-- Tambah Mahasiswa:
-
-1. Isi form dengan data mahasiswa
-
-2. Klik tombol Save
-
-
-- Edit Mahasiswa:
-
-1. Pilih data di tabel
-
-2. Data akan muncul di form
-
-3. Ubah data
-
-4. Klik Save
-
-- Hapus Mahasiswa:
-
-1. Pilih data di tabel
-
-2. Klik Delete
-
-
-- Clear Form:
-
-1. Klik Clear untuk membersihkan form
 
 ### Output
 
-![image](ss/ss13.png)
+#### Form Mahasiswa
+
+![image](img/ss13.png)
+
+#### Form Nilai Mahasiswa
+
+![image](img/ss13.png)
 
 ## Selesai
