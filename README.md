@@ -32,7 +32,7 @@
 
 #### BaseModel.java
 
-![image](ss/ss3.png)
+![image](img/ss1.png)
 
 - Merupakan abstract class yang menjadi dasar untuk semua model
 Mengimplementasikan operasi CRUD dasar (Create, Read, Update, Delete)
@@ -53,7 +53,7 @@ Method abstract yang harus diimplementasikan:
 
 #### Database.java
 
-![image](ss/ss4.png)
+![image](img/ss2.png)
 
 - Mengatur koneksi ke database MySQL
 Menggunakan pattern Singleton untuk koneksi database
@@ -70,7 +70,7 @@ Menyimpan konfigurasi database seperti:
 
 #### RowMapper.java
 
-![image](ss/ss5.png)
+![image](img/ss3.png)
 
 - Interface untuk mapping data dari ResultSet ke objek
 
