@@ -15,15 +15,15 @@
 
 ![image](img/ss0.png)
 
-- classes: Berisi kelas-kelas dasar dan utilitas
+**- classes:** Berisi kelas-kelas dasar dan utilitas
 
-- controller: Berisi logic untuk mengontrol alur data
+**- controller:** Berisi logic untuk mengontrol alur data
 
-- model: Berisi struktur data dan operasi database
+**- model:** Berisi struktur data dan operasi database
 
-- view: Berisi tampilan GUI
+**- view:** Berisi tampilan GUI
 
-- Main.java: File utama untuk menjalankan aplikasi
+**- Main.java:** File utama untuk menjalankan aplikasi
 
 
 ## PENJELASAN SETIAP PACKAGE DAN FILE
@@ -39,15 +39,15 @@ Mengimplementasikan operasi CRUD dasar (Create, Read, Update, Delete)
 Menggunakan generic type <T> untuk fleksibilitas tipe data
 Method abstract yang harus diimplementasikan:
 
-1. findAll(): Mengambil semua data
+**1. findAll():** Mengambil semua data
 
-2. findById(): Mencari data berdasarkan ID
+**2. findById():** Mencari data berdasarkan ID
 
-3. insert(): Menambah data baru
+**3. insert():** Menambah data baru
 
-4. update(): Mengubah data
+**4. update():** Mengubah data
 
-5. delete(): Menghapus data
+**5. delete():** Menghapus data
 
 
 
@@ -59,13 +59,13 @@ Method abstract yang harus diimplementasikan:
 Menggunakan pattern Singleton untuk koneksi database
 Menyimpan konfigurasi database seperti:
 
-1. DRIVER: MySQL JDBC driver
+**1. DRIVER:** MySQL JDBC driver
 
-2. URL: Alamat database
+**2. URL:** Alamat database
 
-3. USERNAME: Username MySQL
+**3. USERNAME:** Username MySQL
 
-4. PASSWORD: Password MySQL
+**4. PASSWORD:** Password MySQL
 
 
 #### RowMapper.java
@@ -74,27 +74,27 @@ Menyimpan konfigurasi database seperti:
 
 - Interface untuk mapping data dari ResultSet ke objek
 
-1. Memudahkan konversi data dari database ke objek Java
+**1. Memudahkan konversi data dari database ke objek Java**
 
-2. Menggunakan generic type untuk fleksibilitas
+**2. Menggunakan generic type untuk fleksibilitas**
 
 ### B. Package Controller:
 
 #### MahasiswaController.java
 
-![image](ss/ss7.png)
+![image](img/ss4.png)
 
 - Menghubungkan Model dan View
 Menghandle event dari View
 Implementasi logika bisnis seperti:
 
-1. saveMahasiswa(): Menyimpan/update data mahasiswa
+**1. saveMahasiswa():** Menyimpan/update data mahasiswa
 
-2. deleteMahasiswa(): Menghapus data mahasiswa
+**2. deleteMahasiswa():** Menghapus data mahasiswa
 
-3. clearForm(): Membersihkan form
+**3. clearForm():** Membersihkan form
 
-4. refreshTable(): Memperbarui tampilan tabel
+**4. refreshTable():** Memperbarui tampilan tabel
 
 
 
