@@ -16,7 +16,7 @@ public class MahasiswaModel extends BaseModel<Mahasiswa> {
         rs.getString("nim"),
         rs.getString("nama"),
         rs.getString("jurusan"),
-        rs.getString("alamat")
+        rs.getString("angkatan")  // Mengubah 'alamat' menjadi 'angkatan'
     );
     
     @Override
@@ -47,24 +47,24 @@ public class MahasiswaModel extends BaseModel<Mahasiswa> {
     
     @Override
     public boolean insert(Mahasiswa mahasiswa) throws SQLException {
-        String sql = "INSERT INTO mahasiswa (nim, nama, jurusan, alamat) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO mahasiswa (nim, nama, jurusan, angkatan) VALUES (?, ?, ?, ?)";  // Mengubah 'alamat' menjadi 'angkatan'
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, mahasiswa.getNim());
             stmt.setString(2, mahasiswa.getNama());
             stmt.setString(3, mahasiswa.getJurusan());
-            stmt.setString(4, mahasiswa.getAlamat());
+            stmt.setString(4, mahasiswa.getAngkatan());  // Mengubah 'alamat' menjadi 'angkatan'
             return stmt.executeUpdate() > 0;
         }
     }
     
     @Override
     public boolean update(Mahasiswa mahasiswa) throws SQLException {
-        String sql = "UPDATE mahasiswa SET nim=?, nama=?, jurusan=?, alamat=? WHERE id=?";
+        String sql = "UPDATE mahasiswa SET nim=?, nama=?, jurusan=?, angkatan=? WHERE id=?";  // Mengubah 'alamat' menjadi 'angkatan'
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, mahasiswa.getNim());
             stmt.setString(2, mahasiswa.getNama());
             stmt.setString(3, mahasiswa.getJurusan());
-            stmt.setString(4, mahasiswa.getAlamat());
+            stmt.setString(4, mahasiswa.getAngkatan());  // Mengubah 'alamat' menjadi 'angkatan'
             stmt.setInt(5, mahasiswa.getId());
             return stmt.executeUpdate() > 0;
         }
