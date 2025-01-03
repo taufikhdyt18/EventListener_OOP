@@ -12,7 +12,7 @@ public class FormMahasiswa extends JFrame {
     private JTextField txtNim;
     private JTextField txtNama;
     private JTextField txtJurusan;
-    private JTextField txtAlamat;
+    private JTextField txtAngkatan;  // Mengubah txtAlamat menjadi txtAngkatan
     private JButton btnSave;
     private JButton btnDelete;
     private JButton btnClear;
@@ -37,7 +37,7 @@ public class FormMahasiswa extends JFrame {
         txtNim = new JTextField();
         txtNama = new JTextField();
         txtJurusan = new JTextField();
-        txtAlamat = new JTextField();
+        txtAngkatan = new JTextField();  // Menggunakan txtAngkatan untuk angkatan
         
         formPanel.add(new JLabel("ID:"));
         formPanel.add(txtId);
@@ -47,8 +47,8 @@ public class FormMahasiswa extends JFrame {
         formPanel.add(txtNama);
         formPanel.add(new JLabel("Jurusan:"));
         formPanel.add(txtJurusan);
-        formPanel.add(new JLabel("Alamat:"));
-        formPanel.add(txtAlamat);
+        formPanel.add(new JLabel("Angkatan:"));  // Mengubah label alamat menjadi angkatan
+        formPanel.add(txtAngkatan);  // Mengubah kolom untuk angkatan
         
         // Button Panel
         JPanel buttonPanel = new JPanel();
@@ -61,7 +61,7 @@ public class FormMahasiswa extends JFrame {
         buttonPanel.add(btnClear);
         
         // Table
-        String[] columns = {"ID", "NIM", "Nama", "Jurusan", "Alamat"};
+        String[] columns = {"ID", "NIM", "Nama", "Jurusan", "Angkatan"};  // Mengubah kolom alamat menjadi angkatan
         tableModel = new DefaultTableModel(columns, 0);
         tableMahasiswa = new JTable(tableModel);
         JScrollPane scrollPane = new JScrollPane(tableMahasiswa);
@@ -93,7 +93,7 @@ public class FormMahasiswa extends JFrame {
         m.setNim(txtNim.getText());
         m.setNama(txtNama.getText());
         m.setJurusan(txtJurusan.getText());
-        m.setAlamat(txtAlamat.getText());
+        m.setAngkatan(txtAngkatan.getText());  // Mengganti penggunaan txtAlamat menjadi txtAngkatan
         return m;
     }
     
@@ -105,7 +105,7 @@ public class FormMahasiswa extends JFrame {
                 m.getNim(),
                 m.getNama(),
                 m.getJurusan(),
-                m.getAlamat()
+                m.getAngkatan()  // Mengganti kolom alamat menjadi angkatan
             });
         }
     }
@@ -115,7 +115,7 @@ public class FormMahasiswa extends JFrame {
         txtNim.setText("");
         txtNama.setText("");
         txtJurusan.setText("");
-        txtAlamat.setText("");
+        txtAngkatan.setText("");  // Mengganti penggunaan txtAlamat menjadi txtAngkatan
     }
     
     public int getSelectedMahasiswaId() {
