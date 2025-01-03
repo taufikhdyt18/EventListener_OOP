@@ -96,7 +96,19 @@ Implementasi logika bisnis seperti:
 
 **4. refreshTable():** Memperbarui tampilan tabel
 
+#### NilaiController.java
 
+![image](img/ss5nilai.png)
+
+**- Mengontrol operasi CRUD untuk data nilai mahasiswa.**
+
+**Fungsi utama:**
+
+**1. Simpan Nilai:** Memvalidasi data nilai sebelum menyimpan ke database (termasuk memastikan ID mahasiswa valid dan nilai dalam rentang 0-100).
+
+**2. Hapus Nilai:** Menghapus data nilai berdasarkan id.
+
+**3. Refresh Tabel:** Memuat ulang data nilai ke tabel di antarmuka pengguna.
 
 ### C. Package Model:
 
