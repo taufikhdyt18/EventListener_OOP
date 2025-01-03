@@ -229,10 +229,10 @@ CREATE TABLE nilai (
 
 #### Form Mahasiswa
 
-![image](img/ss13.png)
+![image](img/formmahasiswa.png)
 
 #### Form Nilai Mahasiswa
 
-![image](img/ss13.png)
+![image](img/formnilaimahasiswa.png)
 
 ## Selesai
