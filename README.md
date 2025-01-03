@@ -100,7 +100,7 @@ Implementasi logika bisnis seperti:
 
 ![image](img/ss5nilai.png)
 
-**- Mengontrol operasi CRUD untuk data nilai mahasiswa.**
+- Mengontrol operasi CRUD untuk data nilai mahasiswa.
 
 **Fungsi utama:**
 
@@ -114,12 +114,12 @@ Implementasi logika bisnis seperti:
 
 #### Mahasiswa.java
 
-![image](img/ss8.png)
+![image](img/ss7.png)
 
 - POJO (Plain Old Java Object) untuk data mahasiswa
 Memiliki properti:
 
-**1. id: ID mahasiswa**
+**1. id:** ID mahasiswa
 
 **2. nim:** Nomor Induk Mahasiswa
 
@@ -130,75 +130,216 @@ Memiliki properti:
 **5. angkatan:** Angkatan Tahun mahasiswa
 
 
-Dilengkapi dengan getter dan setter
+- Dilengkapi dengan getter dan setter
 
 
 #### MahasiswaModel.java
 
-![image](img/ss9.png)
+![image](img/ss8.png)
 
 - Extends BaseModel<Mahasiswa>
 Implementasi operasi database untuk entity Mahasiswa
 Menggunakan PreparedStatement untuk keamanan dari SQL Injection
 Implementasi method CRUD:
 
-1. findAll(): SELECT semua mahasiswa
+**1. findAll():** SELECT semua mahasiswa
 
-2. findById(): SELECT mahasiswa berdasar ID
+**2. findById():** SELECT mahasiswa berdasar ID
 
-3. insert(): INSERT mahasiswa baru
+**3. insert():** INSERT mahasiswa baru
 
-4. update(): UPDATE data mahasiswa
+**4. update():** UPDATE data mahasiswa
 
-5. delete(): DELETE mahasiswa
+**5. delete():** DELETE mahasiswa
 
+#### Nilai.java
+
+![image](img/ss9.png)
+
+- Atribut Kelas
+
+**id**
+
+Tipe: **int**
+
+-Digunakan untuk menyimpan primary key dari tabel nilai. Atribut ini berfungsi sebagai identitas unik untuk setiap data nilai mahasiswa.
+
+**mahasiswaId**
+
+Tipe: **int**
+
+- Menyimpan referensi ke mahasiswa yang bersangkutan. Atribut ini mengacu pada ID mahasiswa di tabel mahasiswa (foreign key).
+
+**mataKuliah**
+
+Tipe: **String**
+
+- Menyimpan nama mata kuliah yang diambil oleh mahasiswa.
+
+**semester**
+
+Tipe: **int**
+
+- Menunjukkan semester di mana mata kuliah tersebut diambil.
+
+**nilaiTugas**
+
+Tipe: **float**
+
+- Menyimpan nilai tugas mahasiswa untuk mata kuliah tertentu.
+
+**nilaiUts**
+
+Tipe: **float**
+
+- Menyimpan nilai UTS (Ujian Tengah Semester) mahasiswa.
+
+**nilaiUas**
+
+Tipe: **float**
+
+- Menyimpan nilai UAS (Ujian Akhir Semester) mahasiswa.
+
+**nilaiAkhir (dihitung)**
+
+Tipe: **float**
+
+- Merupakan nilai akhir yang dihitung berdasarkan bobot dari nilai tugas, UTS, dan UAS. Biasanya, perhitungan dilakukan dengan rumus tertentu, misalnya:
+```
+nilaiAkhir = (0.3 * nilaiTugas) + (0.3 * nilaiUts) + (0.4 * nilaiUas);
+```
+-Nilai ini hanya digunakan untuk membaca hasil akhir dan tidak dimasukkan langsung oleh pengguna.
+
+**grade (dihitung)**
+
+Tipe: **String**
+
+- Menyimpan grade berdasarkan nilai akhir, misalnya:
+```
+A: >= 80
+B: 70 - 79
+C: 60 - 69
+D: 50 - 59
+E: < 50
+```
+- Grade ini digunakan untuk mengevaluasi performa mahasiswa dalam suatu mata kuliah.
+
+#### NilaiModel.java
+
+![image](img/ss10.png)
+
+- Kelas ini adalah model data untuk entitas Nilai dan mengatur semua operasi yang berhubungan dengan database, seperti CRUD (Create, Read, Update, Delete).
+
+- Terhubung dengan tabel database nilai.
+
+
+**Fitur utama:**
+
+**findAll:** Mengambil semua data dari tabel nilai.
+**findByMahasiswaId:** Mengambil data berdasarkan mahasiswa_id.
+**findById:** Mengambil data berdasarkan id.
+**insert:** Menyisipkan data baru ke tabel nilai.
+**update:** Memperbarui data yang sudah ada di tabel.
+**delete:** Menghapus data dari tabel berdasarkan id.
+
+- Data dari tabel diambil menggunakan ResultSet dan diubah menjadi objek Nilai menggunakan RowMapper.
+Semua query ditulis menggunakan PreparedStatement untuk menghindari SQL Injection.
 
 
 ### D. Package View:
 
 #### FormMahasiswa.java
 
-![image](img/ss10.png)
+![image](img/ss11.png)
 
 - Implementasi GUI menggunakan Java Swing
 Komponen utama:
 
-1. JTextField untuk input data
+**1. JTextField** untuk input data
 
-2. JButton untuk aksi (Save, Delete, Clear)
+**2. JButton** untuk aksi (Save, Delete, Clear)
 
-3. JTable untuk menampilkan data
+**3. JTable** untuk menampilkan data
 
 
-- Fitur:
+**- Fitur:**
 
-1. Form input data mahasiswa
+**1.** Form input data mahasiswa
 
-2. Tabel daftar mahasiswa
+**2.** Tabel daftar mahasiswa
 
-3. Tombol aksi
+**3.** Tombol aksi
 
 
 Event handling untuk interaksi user
 
+#### FormNilai.java
+
+
+![image](img/ss12.png
+
+**Penjelasan**
+
+- GUI untuk menampilkan data Nilai dari mahasiswa.
+
+- Digunakan untuk memasukkan nilai tugas, UTS, UAS, dan menghitung nilai akhir serta grade.
+
+**Fitur utama:**
+
+**Input field:**
+
+**ID:** Identitas nilai (readonly).
+
+**Mahasiswa ID:** ID mahasiswa terkait.
+
+**Mata Kuliah, Semester, Nilai Tugas, Nilai UTS, Nilai UAS:** Informasi nilai yang dapat dimasukkan.
+
+**Nilai Akhir dan Grade:** Dihitung otomatis berdasarkan nilai-nilai yang dimasukkan.
+
+- Tombol:
+
+**Save:** Menyimpan data ke database.
+
+**Delete:** Menghapus data nilai yang dipilih.
+
+**Clear:** Membersihkan input field.
+
+- Tabel:
+
+**Menampilkan daftar nilai mahasiswa.**
+
+
+- Ketika pengguna memasukkan nilai, aplikasi akan otomatis menghitung Nilai Akhir dan Grade berdasarkan logika di controller.
+Setelah menyimpan data, tabel akan diperbarui dengan data terbaru.
+
 ### E. Main.java
 
-![image](img/ss11.png)
+![image](img/ss13.png)
 
-- Entry point aplikasi
-Inisialisasi semua komponen:
+- Kelas utama yang mengatur koneksi ke database dan menghubungkan semua komponen (model, view, controller).
 
-1. Membuat koneksi database
+**Fungsi utama:**
 
-2. Membuat instance Model
+- Membuat objek:
 
-3. Membuat instance View
+**Connection:** Koneksi ke database melalui Database.getConnection().
 
-4. Membuat instance Controller
+**MahasiswaModel:** Model untuk entitas Mahasiswa.
 
-5. Menampilkan GUI
+**NilaiModel:** Model untuk entitas Nilai.
+
+**FormMahasiswa:** GUI untuk mahasiswa.
+
+**FormNilai:** GUI untuk nilai mahasiswa.
+
+- Menghubungkan:
+
+**MahasiswaController** dengan **MahasiswaModel** dan **FormMahasiswa**.
+
+**NilaiController** dengan **NilaiModel**, **MahasiswaModel**, dan **FormNilai**.
 
 
+- Menampilkan GUI FormNilai kepada pengguna.
 
 
 ### KONFIGURASI DATABASE DI MYSQL
