@@ -5,16 +5,16 @@ public class Mahasiswa {
     private String nim;
     private String nama;
     private String jurusan;
-    private String alamat;
+    private String angkatan;
     
     public Mahasiswa() {}
     
-    public Mahasiswa(int id, String nim, String nama, String jurusan, String alamat) {
+    public Mahasiswa(int id, String nim, String nama, String jurusan, String angkatan) {
         this.id = id;
         this.nim = nim;
         this.nama = nama;
         this.jurusan = jurusan;
-        this.alamat = alamat;
+        this.angkatan = angkatan; 
     }
     
     // Getters and Setters
@@ -30,6 +30,6 @@ public class Mahasiswa {
     public String getJurusan() { return jurusan; }
     public void setJurusan(String jurusan) { this.jurusan = jurusan; }
     
-    public String getAlamat() { return alamat; }
-    public void setAlamat(String alamat) { this.alamat = alamat; }
+    public String getAngkatan() { return angkatan; }  
+    public void setAngkatan(String angkatan) { this.angkatan = angkatan; }  
 }
