@@ -276,7 +276,7 @@ Event handling untuk interaksi user
 #### FormNilai.java
 
 
-![image](img/ss12.png
+![image](img/ss12.png)
 
 **Penjelasan**
 
