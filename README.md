@@ -67,6 +67,10 @@ CREATE TABLE nilai (
 
 - Form Mahasiswa
 
+![image](ss/outputmhs.png)
+
+- Form Nilai
+
 ![image](ss/outputnilai.png)
 
 ## Selesai
