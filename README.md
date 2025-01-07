@@ -7,7 +7,7 @@
 
 
 ## Latihan OOP
-![image](img/latihan.png)
+![image](latihan.png)
 
 ### STRUKTUR PROYEK
 
