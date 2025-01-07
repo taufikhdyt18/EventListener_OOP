@@ -13,7 +13,7 @@
 
 **- Proyek ini menggunakan arsitektur MVC (Model-View-Controller) dengan struktur folder:**
 
-![image](img/ss0.png)
+![image](struktur.png)
 
 **- classes:** Berisi kelas-kelas dasar dan utilitas
 
