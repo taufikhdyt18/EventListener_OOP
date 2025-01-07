@@ -13,7 +13,7 @@
 
 **- Proyek ini menggunakan arsitektur MVC (Model-View-Controller) dengan struktur folder:**
 
-![image](struktur1.png)
+![image](ss/struktur1.png)
 
 **- classes:** Berisi kelas-kelas dasar dan utilitas
 
@@ -62,3 +62,11 @@ CREATE TABLE nilai (
 
 #### BaseModel.java
 
+
+### Output
+
+- Form Mahasiswa
+
+![image](ss/outputnilai.png)
+
+## Selesai
