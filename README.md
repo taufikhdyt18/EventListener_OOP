@@ -5,6 +5,9 @@
 | Nama  | Taufik Hidayat
 | Kelas | TI.23.A6
 
+**Link YouTube:**
+
+https://youtu.be/ieFOnG4l9Qg?si=xh7soexZL1oV8txH
 
 ## Latihan OOP
 ![image](latihan.png)
